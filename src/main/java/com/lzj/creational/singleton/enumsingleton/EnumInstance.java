@@ -18,7 +18,7 @@ public class EnumInstance {
 
         private final EnumInstance instance;
 
-        private Singleton() {
+        Singleton() {
             instance = new EnumInstance();
         }
 
