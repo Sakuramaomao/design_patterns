@@ -8,20 +8,27 @@ package com.lzj.creational.singleton.enumsingleton;
  * @Author Sakura
  * @Date 2019/3/17 17:38
  */
-public enum EnumInstance {
-    INSTANCE;
-    // data是个单例。
-    private static Object data = new Object();
+public class EnumInstance {
+    // 私有构造函数。
+    private EnumInstance() {}
 
-    public Object getData() {
-        return data;
+    // 枚举的方式实现单例模式。
+    private enum Singleton {
+        INSTANCE;
+
+        private final EnumInstance instance;
+
+        private Singleton() {
+            instance = new EnumInstance();
+        }
+
+        public EnumInstance getInstance() {
+            return instance;
+        }
     }
 
-    public void setData(Object data) {
-        this.data = data;
-    }
-
+    // 对外提供获取单例的方法。
     public static EnumInstance getInstance() {
-        return INSTANCE;
+        return Singleton.INSTANCE.getInstance();
     }
 }
