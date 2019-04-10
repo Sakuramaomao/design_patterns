@@ -21,4 +21,9 @@ public class EggDecorator extends AbstractDecorator {
     int cost() {
         return super.cost() + 1;
     }
+
+    @Override
+    void doSomething() {
+
+    }
 }

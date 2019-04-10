@@ -18,4 +18,9 @@ public class SausageDecorator extends AbstractDecorator {
     int cost() {
         return super.cost() + 2;
     }
+
+    @Override
+    void doSomething() {
+
+    }
 }
