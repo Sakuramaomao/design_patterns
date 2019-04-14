@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 课程目录。
+ * 课程目录类。是课程类的父节点。
+ * 它们都继承了相同的抽象类。
  *
  * @Author Sakura
  * @Date 2019/4/13 19:04
