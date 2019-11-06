@@ -44,7 +44,7 @@ public class LazySingleton {
            那么有可能会因为重排序问题获取到未建立完全的LazySingleton对象。*/
         if (lazySingleton == null) {
             synchronized (LazySingleton.class) {
-                if (lazySingleton != null) {
+                if (lazySingleton == null) {
                     lazySingleton = new LazySingleton();
                 }
             }
