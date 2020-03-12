@@ -39,12 +39,12 @@ public class LazySingleton {
      * V3、使用Double Check方式解决性能问题，并且使用volatile关键字避免重排序问题。
      */
     private volatile static LazySingleton lazySingleton = null;
-    public synchronized static LazySingleton getInstance() {
+    public static LazySingleton getInstance() {
         /* 如果lazySingleton不加有volatile关键字，
            那么有可能会因为重排序问题获取到未建立完全的LazySingleton对象。*/
         if (lazySingleton == null) {
             synchronized (LazySingleton.class) {
-                if (lazySingleton != null) {
+                if (lazySingleton == null) {
                     lazySingleton = new LazySingleton();
                 }
             }
